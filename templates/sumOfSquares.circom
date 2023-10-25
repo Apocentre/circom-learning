@@ -10,7 +10,7 @@ template SumOfSquares() {
   component sq1 = Square();
   component sq2 = Square();
 
-  // witing the components together
+  // wiring the components together
   sq1.in <== a;
   sq2.in <== b;
 
