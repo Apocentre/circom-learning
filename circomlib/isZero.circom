@@ -15,7 +15,7 @@ template isZero() {
   /// This is following the pattern of “compute, then constrain.”
   ///
   /// But why make inv a signal instead of a variable? It appears to only be used ephemerally. If we set inv to be a var
-  // and replace <-- with = we will get the non-quadratic constraints error because we are multiplying the signal in with a variable, 
+  /// and replace <-- with = we will get the non-quadratic constraints error because we are multiplying the signal in with a variable, 
   inv <-- in != 0 ? 1/in : 0;
   out <== -in * inv + 1;
 

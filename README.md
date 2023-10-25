@@ -69,4 +69,4 @@ template Powers {
 
 component main = Powers();
 ```
-Underconstraints are a major source source of security bugs in zero knowledge applications, so triple check that the constraints are actually generated in the R1CS the way you expect them to!
+Underconstraints are a major source source of security bugs in zero knowledge applications, **so triple check that the constraints are actually generated in the R1CS the way you expect them to!** by running `circom <circuit_name>.circom --r1cs`
