@@ -1,6 +1,6 @@
 pragma circom  2.1.6;
 
-import "./square.circom";
+include "./square.circom";
 
 template SumOfSquares() {
   signal input a;
@@ -12,9 +12,9 @@ template SumOfSquares() {
 
   // witing the components together
   sq1.in <== a;
-  sq1.in <== b;
+  sq2.in <== b;
 
   out <== sq1.out + sq2.out;
 }
 
-component SumOfSquares()
+component main = SumOfSquares();
