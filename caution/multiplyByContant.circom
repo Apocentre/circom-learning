@@ -10,22 +10,23 @@ template MultiplyByContantUnderconstraint() {
 }
 
 /// Here we are saying we know x, such that 5x = out, where out is public. So if out is 100, we expect x to be 20 right?
-// If we look at the R1CS, we see it is in fact empty, no constraints are created!
-//
-// This is because although <== is a constraint, the constraint it generates is not a quadratic constraint,
-// it is multiplication by a constant.
+/// If we look at the R1CS, we see it is in fact empty, no constraints are created!
+///
+/// This is because although <== is a constraint, the constraint it generates is not a quadratic constraint,
+/// it is multiplication by a constant.
 
 
 /// The solution is to wire the IsEqual template in to enforce the equality.
 template MultiplyByContant() {
   signal input in;
   signal input result;
+  signal output out;
 
   component isEq = isEqual();
   isEq.in[0] <== in * 5;
   isEq.in[1] <== result;
 
-  isEq.out === 1;
+  out <== isEq.out;
 }
 
 component main = MultiplyByContant();
