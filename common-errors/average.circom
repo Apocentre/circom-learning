@@ -21,7 +21,7 @@ template AvgWrong(n) {
   denominator_inv <-- invert(n);
 
   // "force" the denominator to be equal to the inverse of
-  // NOTE! This does not create a contraint
+  // NOTE! This does not create a contraint because we are comparing a signal to a contract value
   1 === denominator_inv * n;
 
   out <== sum * denominator_inv;
