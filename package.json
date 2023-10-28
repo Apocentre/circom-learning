@@ -1,0 +1,11 @@
+{
+  "name": "learning-circom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Apocentre/circom-learning.git",
+  "author": "ppoliani <ppoliani@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "circomlib": "^2.0.5"
+  }
+}
