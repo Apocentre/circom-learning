@@ -8,7 +8,7 @@ function invert(x) {
 
 template AvgWrong(n) {
   signal input in[n];
-  signal denominator_inv;
+  signal denominator_inv;`
   signal output out;
 
   // The average of n signals is their sum divided by the number of signals. Division in finite fields is the same as
@@ -21,7 +21,7 @@ template AvgWrong(n) {
   denominator_inv <-- invert(n);
 
   // "force" the denominator to be equal to the inverse of
-  // NOTE! This does not create a contraint because we are comparing a signal to a contract value
+  // NOTE! This does not create a contraint because we are comparing a signal to a constant value
   1 === denominator_inv * n;
 
   out <== sum * denominator_inv;
