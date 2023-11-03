@@ -19,9 +19,10 @@ template MultiplyByContantUnderconstraint() {
 /// The solution is to wire the IsEqual template in to enforce the equality.
 template MultiplyByContant() {
   signal input in;
-  signal input result;
   signal output out;
 
+  signal result <-- in * 5;
+  
   component isEq = isEqual();
   isEq.in[0] <== in * 5;
   isEq.in[1] <== result;
